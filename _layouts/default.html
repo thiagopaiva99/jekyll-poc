@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href={{"/css/main.css" | prepend: site.baseurl}}>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
     <nav class="masthead-nav">
       {% for page in site.pages %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
+        <a href="{{ page.url }}">{{ page.title }}</a> 
       {% endfor %}
     </nav>
 

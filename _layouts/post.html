@@ -10,6 +10,11 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      <read-time>
+        {%- include minutes-to-read.html -%}
+        | {{ minutesText }}
+      </read-time>
+
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
@@ -19,9 +24,9 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+  {%- include disqus_comments.html -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+
 </article>
